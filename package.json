@@ -1,0 +1,47 @@
+{
+  "name": "timeseries",
+  "version": "1.0.0",
+  "description": "Agrovisio Time Series",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "postinstall": "npm run build",
+    "start": "node index.js",
+    "start:production": "npm run build && node index.js",
+    "start:development": "webpack-dev-server --hot --progress --host 0.0.0.0 --port 8080 --env.base=client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozanilbey/timeseries.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ozanilbey/timeseries/issues"
+  },
+  "author": "Ozan İlbey Yılmaz",
+  "license": "ISC",
+  "homepage": "https://github.com/ozanilbey/timeseries#readme",
+  "dependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "compression-webpack-plugin": "^2.0.0",
+    "css-loader": "^1.0.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.26.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "engines": {
+    "node": "8.11.3",
+    "npm": "6.4.1"
+  }
+}

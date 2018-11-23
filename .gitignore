@@ -1,0 +1,10 @@
+logs
+*.log
+npm-debug.log*
+node_modules
+package-lock.json
+.DS_Store
+
+index.html
+server.bundle.js
+app/build/

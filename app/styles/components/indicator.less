@@ -1,0 +1,57 @@
+body {
+  padding-top: 70px;
+}
+
+.indicator {
+  height: inherit;
+  & > * {
+    float: left;
+  }
+  a {
+    width: 70px;
+    height: 70px;
+    padding: 20px 0;
+    text-align: center;
+    border-right: 2px solid fade(@background-color, 35%);
+    background-color: transparent;
+    .transition(background-color .35s ease);
+    &:hover {
+      background-color: fade(@default-color, 5%);
+    }
+    img {
+      height: 30px;
+    }
+    svg {
+      &.back {
+        height: 18px;
+        margin: 6px 0;
+      }
+      path {
+        fill: @secondary-color;
+      }
+    }
+  }
+  p {
+    display: inline-block;
+    height: 30px;
+    .no-margin;
+    margin: 20px;
+    padding: 0;
+    line-height: 30px;
+    color: @text-color-strong;
+  }
+  button {
+    float: right;
+    width: auto;
+    margin: 20px;
+    height: 30px;
+    line-height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+    .background-color-states(@secondary-color);
+    .transition(all .35s ease);
+    &[disabled] {
+      opacity: 0;
+    }
+  }
+}

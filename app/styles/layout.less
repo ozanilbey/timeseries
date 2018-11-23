@@ -1,0 +1,42 @@
+body {
+  .app {
+    margin: 0 auto;
+    &#start, &#loading {
+      main {
+        display: table;
+        width: 100%;
+        .container {
+          min-height: calc(100vh - 70px - 3em);
+          display: table-cell;
+          text-align: center;
+          vertical-align: middle;
+          .loader {
+            width: 3em;
+          }
+        }
+      }
+    }
+    nav {
+      z-index: 99;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 70px;
+      background-color: @shade-color;
+      .box-shadow(0 .25em .5em -.25em fade(black, 50%));
+    }
+    main {
+      min-height: calc(100vh - 70px - 3em);
+      margin-top: 1.5em;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
