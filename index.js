@@ -21,4 +21,7 @@ app.use('/app', express.static('app'))
 
 server.listen(port, '0.0.0.0', function() {
   console.log(`\nApplication available at port ${port}\n`)
+  setInterval(function() {
+    http.get("https://agrovisio-timeseries.herokuapp.com")
+  }, 1500000); // Ping every 25 minutes
 })
