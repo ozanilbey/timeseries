@@ -16,7 +16,7 @@ import '~/styles/common.less'
 const views = [
   {
     view: 'start',
-    title: 'Agrovisio Time Series yükleniyor!',
+    title: 'Agrovisio Time Series yükleniyor...',
     back: false
   },
   {
