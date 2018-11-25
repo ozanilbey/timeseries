@@ -23,10 +23,10 @@ class List extends React.Component {
         <img className="legend" src="/app/data/images/legend.png" />
         <ul className="labels">
           <li>
-            Görünen Dalga Boyları
+            Doğal Renkler
           </li>
           <li>
-            Görünmeyen Dalga Boyları
+            Sentez Renkler
             </li>
           <li>
             Bitki Gelişim Analizi
@@ -57,8 +57,9 @@ class List extends React.Component {
                 </div>
               )}
               <div className="report">
+                <b>{date}</b>
                 {item.dates[date].report.downloadable &&
-                  <a href={`/app/data/reports/${item.province}-${item.district}-${item.neighborhood}-${item.lot}-${item.parcel}/${item.product}-${date}.pdf`} download={`${item.province}-${item.district}-${item.neighborhood}-${item.lot}-${item.parcel}-${item.product}-${date}`}>
+                  <a href={`/app/data/reports/${item.province}-${item.district}-${item.neighborhood}-${item.lot}-${item.parcel}-${item.product}/${date}.pdf`} download={`${item.province}-${item.district}-${item.neighborhood}-${item.lot}-${item.parcel}-${item.product}-${date}`}>
                     <svg viewBox="0 0 28 40">
                       <path d="M6.75,19.402H5.415v1.991H6.75c0.536,0,0.96-0.472,0.96-0.968C7.709,19.866,7.286,19.402,6.75,19.402z"/>
                       <path d="M12.123,19.442h-1.327v3.582h1.327C14.282,23.024,14.377,19.442,12.123,19.442z"/>
