@@ -7,6 +7,7 @@ import Navigation from './containers/Navigation'
 import Indicator from '~/components/Indicator'
 import Select from '~/components/Select'
 import Display from '~/components/Display'
+import List from '~/components/List'
 import Loader from '~/components/Loader'
 
 import items from '~/data/list.json'
@@ -23,6 +24,11 @@ const views = [
     view: 'select',
     title: 'Lütfen bir bölge seçin',
     back: false
+  },
+  {
+    view: 'list',
+    title: 'Sonuçlar görüntüleniyor',
+    back: true
   },
   {
     view: 'display',
@@ -50,7 +56,7 @@ class App extends React.Component {
   componentDidMount() {
     setTimeout(
       () => this.setView('select'),
-      2500
+      1000
     )
   }
   setView(name) {
@@ -72,7 +78,7 @@ class App extends React.Component {
         type
       }
     })
-    this.setView('display')
+    this.setView('list')
     target && this.setState({
       title: target.label
     })
@@ -99,6 +105,16 @@ class App extends React.Component {
         case 'display':
           return (
             <Display
+              items={items}
+              filter={filter}
+              setFilter={type =>
+                setFilter({type: type})
+              } />
+          )
+          break
+        case 'list':
+          return (
+            <List
               items={items}
               filter={filter}
               setFilter={type =>

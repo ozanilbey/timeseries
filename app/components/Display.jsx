@@ -27,7 +27,7 @@ class Display extends React.Component {
               ? 'rgb(85, 85, 85)'
               : 'rgb(0, 0, 0)'
           }}>
-          {item.dates.map((date, key) =>
+          {Object.keys(item.dates).map((date, key) =>
             <li
               key={key}
               className="item"

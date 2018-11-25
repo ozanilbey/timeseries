@@ -9,7 +9,7 @@ const Select = (props) => (
           <div
             className="image"
             style={{backgroundImage: `url(
-              /app/data/images/${item.province}-${item.district}-${item.neighborhood}-${item.lot}-${item.parcel}-${item.product}/trueColor/${item.dates[0]}.png
+              /app/data/images/${item.province}-${item.district}-${item.neighborhood}-${item.lot}-${item.parcel}-${item.product}/trueColor/${Object.keys(item.dates)[0]}.png
             )`}}>
           </div>
           <div className="caption">

@@ -13,6 +13,13 @@ app.get('*.js', function (request, response, next) {
   next()
 })
 
+app.get('*.css', function (request, response, next) {
+  request.url = request.url + '.gz'
+  response.set('Content-Type', 'text/css')
+  response.set('Content-Encoding', 'gzip')
+  next()
+})
+
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname + '/index.html'))
 })
@@ -23,5 +30,5 @@ server.listen(port, '0.0.0.0', function() {
   console.log(`\nApplication available at port ${port}\n`)
   setInterval(function() {
     http.get("https://agrovisio-timeseries.herokuapp.com")
-  }, 1500000); // Ping every 25 minutes
+  }, 1500000) // Ping every 25 minutes
 })
